@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MiceMovement : MonoBehaviour {
+public class avatarMovement : MonoBehaviour {
 
 	// Use this for initialization
     private GramophoneDevice device;
