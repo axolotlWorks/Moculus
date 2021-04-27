@@ -1,4 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/moculusAvatar.unity
+- path: Assets/Scenes/sampleScene.unity
   isLoaded: 1
   isActive: 1
+  isSubScene: 0
