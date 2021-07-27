@@ -3,4 +3,4 @@ The Moculus is a Virtual Reality Head-Mounted-Display (HMD) for small experiment
 
 Device is patented by Femtonics Ltd. https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2021009526
 
-Requires Unity version 2020.3.4f1
+Requires Unity version 2020.3.15f
