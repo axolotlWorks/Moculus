@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/zero_maze.unity
+- path: Assets/Scenes/sampleScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
