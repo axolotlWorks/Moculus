@@ -1,0 +1,65 @@
+{
+    "Mouse": {
+        "checkpoints": [
+            {
+                "steps": 41982,
+                "file_path": "results\\lotofmouse\\Mouse\\Mouse-41982.onnx",
+                "reward": null,
+                "creation_time": 1769442360.006308,
+                "auxillary_file_paths": [
+                    "results\\lotofmouse\\Mouse\\Mouse-41982.pt"
+                ]
+            },
+            {
+                "steps": 55102,
+                "file_path": "results\\lotofmouse\\Mouse\\Mouse-55102.onnx",
+                "reward": null,
+                "creation_time": 1769442703.2973533,
+                "auxillary_file_paths": [
+                    "results\\lotofmouse\\Mouse\\Mouse-55102.pt"
+                ]
+            },
+            {
+                "steps": 88638,
+                "file_path": "results\\lotofmouse\\Mouse\\Mouse-88638.onnx",
+                "reward": -3.156625058501959,
+                "creation_time": 1769443328.5692255,
+                "auxillary_file_paths": [
+                    "results\\lotofmouse\\Mouse\\Mouse-88638.pt"
+                ]
+            },
+            {
+                "steps": 228734,
+                "file_path": "results\\lotofmouse\\Mouse\\Mouse-228734.onnx",
+                "reward": null,
+                "creation_time": 1769443838.2095,
+                "auxillary_file_paths": [
+                    "results\\lotofmouse\\Mouse\\Mouse-228734.pt"
+                ]
+            },
+            {
+                "steps": 232694,
+                "file_path": "results\\lotofmouse\\Mouse\\Mouse-232694.onnx",
+                "reward": -2.018400087952614,
+                "creation_time": 1769519093.2420022,
+                "auxillary_file_paths": [
+                    "results\\lotofmouse\\Mouse\\Mouse-232694.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 232694,
+            "file_path": "results\\lotofmouse\\Mouse.onnx",
+            "reward": -2.018400087952614,
+            "creation_time": 1769519093.2420022,
+            "auxillary_file_paths": [
+                "results\\lotofmouse\\Mouse\\Mouse-232694.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

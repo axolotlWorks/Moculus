@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/zero_maze.unity
-    guid: 7c19d09d09455cc4991714e5c34d69aa
-  - enabled: 1
-    path: Assets/Scenes/sampleScene.unity
-    guid: 457caae504133534a8586488aa917afb
-  m_configObjects: {}
+    path: Assets/Scenes/SimpleScene.unity
+    guid: 0f9776b8607dcd3449fe774289b8c4ae
+  m_configObjects:
+    com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f,
+      type: 2}
+  m_UseUCBPForAssetBundles: 0

@@ -24,7 +24,7 @@ public class AvatarMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		m_Rigidbody.velocity = transform.forward * device.GetVelocity();
+		m_Rigidbody.linearVelocity = transform.forward * device.GetVelocity();
 
 	}
 }
