@@ -3,6 +3,7 @@ using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 using UnityEngine;
 using System;
+using System.Security.AccessControl;
 
 public class MouseAgentSimple : Agent
 
@@ -11,11 +12,13 @@ public class MouseAgentSimple : Agent
     [SerializeField] private float _moveSpeed = 2f; //can be slow
 
     float time = 0;
+    
+    public int lickCount = 0;
 
 
 
-
-   
+    private bool inTheZone = false;
+    private int lickInZone = 0;
 
     public int currentEpisode = 0;
     public float cumulativeReward = 0f;
@@ -25,6 +28,8 @@ public class MouseAgentSimple : Agent
         Debug.Log("MouseAgent initialized");
         currentEpisode = 0;
         cumulativeReward = 0f;
+        lickInZone= 0;
+        lickCount = 0;
     }
     public override void OnEpisodeBegin() 
     { 
@@ -32,7 +37,9 @@ public class MouseAgentSimple : Agent
 
         currentEpisode++;
         cumulativeReward = 0f;
-   
+        lickInZone = 0;
+        lickCount = 0;
+
 
         ResetPosition();
     }
@@ -81,10 +88,22 @@ public class MouseAgentSimple : Agent
             case 1: // Move Forward
                 transform.localPosition += transform.forward * _moveSpeed * Time.deltaTime;
                 break;
-            case 2: // Turn Right
+            case 3: // move back
                 transform.localPosition -= transform.forward * _moveSpeed * Time.deltaTime;
                 break;
-         
+            case 2: // lick
+                lickCount++; 
+                if(inTheZone) 
+                { 
+                    lickInZone++;
+                    if (lickInZone %3 == 0)
+                    {
+                        AddReward(1.5f);
+
+                    }
+                }
+                break;
+
         }
     }
 
@@ -92,6 +111,7 @@ public class MouseAgentSimple : Agent
     {
         if (other.CompareTag("EndGoal"))
         {
+            inTheZone= true;
             AddReward(1.0f);
             cumulativeReward = GetCumulativeReward();
             //EndEpisode();
@@ -106,14 +126,14 @@ public class MouseAgentSimple : Agent
     {
         if (other.CompareTag("EndGoal"))
         {
-            AddReward(0.2f* Time.deltaTime);
+          /*  //AddReward(0.2f* Time.deltaTime);
             time += Time.deltaTime;
             //Debug.Log(time);
             if (time >= 50f)
             {
                 Debug.Log("Goal reached for 5 seconds, ending episode.");
                 EndEpisode();
-            }
+            }*/
         }
     }
 
@@ -121,6 +141,7 @@ public class MouseAgentSimple : Agent
     {
         if (other.CompareTag("EndGoal"))
         {
+            inTheZone = false;
             AddReward(-0.5f);
         }
     }
@@ -137,13 +158,13 @@ public class MouseAgentSimple : Agent
         {
             discreteActionsOut[0] = 1; // Move Forward
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
-            discreteActionsOut[0] = 3; // Turn Right
+            discreteActionsOut[0] = 2; // Turn Right
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            discreteActionsOut[0] = 2; // Turn Left
+            discreteActionsOut[0] = 3; // Turn Left
         }
     }
 }

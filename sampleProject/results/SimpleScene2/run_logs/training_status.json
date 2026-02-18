@@ -2,22 +2,22 @@
     "Simple": {
         "checkpoints": [
             {
-                "steps": 2176,
-                "file_path": "results\\SimpleScene2\\Simple\\Simple-2176.onnx",
-                "reward": null,
-                "creation_time": 1769614929.6604035,
+                "steps": 2464,
+                "file_path": "results\\SimpleScene2\\Simple\\Simple-2464.onnx",
+                "reward": -0.32800057778755826,
+                "creation_time": 1770645733.3994577,
                 "auxillary_file_paths": [
-                    "results\\SimpleScene2\\Simple\\Simple-2176.pt"
+                    "results\\SimpleScene2\\Simple\\Simple-2464.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 2176,
+            "steps": 2464,
             "file_path": "results\\SimpleScene2\\Simple.onnx",
-            "reward": null,
-            "creation_time": 1769614929.6604035,
+            "reward": -0.32800057778755826,
+            "creation_time": 1770645733.3994577,
             "auxillary_file_paths": [
-                "results\\SimpleScene2\\Simple\\Simple-2176.pt"
+                "results\\SimpleScene2\\Simple\\Simple-2464.pt"
             ]
         }
     },
