@@ -18,15 +18,24 @@
                 "auxillary_file_paths": [
                     "results\\lickStripes\\Simple\\Simple-382441.pt"
                 ]
+            },
+            {
+                "steps": 383005,
+                "file_path": "results\\lickStripes\\Simple\\Simple-383005.onnx",
+                "reward": 996.5000424683094,
+                "creation_time": 1771433222.0398698,
+                "auxillary_file_paths": [
+                    "results\\lickStripes\\Simple\\Simple-383005.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 382441,
+            "steps": 383005,
             "file_path": "results\\lickStripes\\Simple.onnx",
-            "reward": 995.3750462830067,
-            "creation_time": 1771002670.9969969,
+            "reward": 996.5000424683094,
+            "creation_time": 1771433222.0398698,
             "auxillary_file_paths": [
-                "results\\lickStripes\\Simple\\Simple-382441.pt"
+                "results\\lickStripes\\Simple\\Simple-383005.pt"
             ]
         }
     },
