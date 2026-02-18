@@ -7,6 +7,12 @@ public class AgentUI : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI rewardText;
     [SerializeField] private TMPro.TextMeshProUGUI lickCount;
 
+    /// <summary>
+    /// Updates the displayed episode, step, cumulative reward, and lick count information in the user interface.
+    /// </summary>
+    /// <remarks>Call this method to refresh the UI elements with the latest values from the agent. This
+    /// method should be invoked whenever the agent's state changes to ensure the displayed information remains
+    /// accurate.</remarks>
     private void Update()
     {
         episodeText.text = $"Episode: {agent.currentEpisode}" + " - Step: "+ agent.StepCount;

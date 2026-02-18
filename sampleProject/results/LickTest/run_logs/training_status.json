@@ -1,0 +1,29 @@
+{
+    "Moculus": {
+        "checkpoints": [
+            {
+                "steps": 628,
+                "file_path": "results\\LickTest\\Moculus\\Moculus-628.onnx",
+                "reward": 100.50000748038292,
+                "creation_time": 1771433055.1642752,
+                "auxillary_file_paths": [
+                    "results\\LickTest\\Moculus\\Moculus-628.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 628,
+            "file_path": "results\\LickTest\\Moculus.onnx",
+            "reward": 100.50000748038292,
+            "creation_time": 1771433055.1642752,
+            "auxillary_file_paths": [
+                "results\\LickTest\\Moculus\\Moculus-628.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.5.1+cu121"
+    }
+}
