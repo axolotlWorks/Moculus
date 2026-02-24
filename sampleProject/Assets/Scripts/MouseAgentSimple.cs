@@ -1,9 +1,11 @@
-using Unity.MLAgents;
-using Unity.MLAgents.Sensors;
-using Unity.MLAgents.Actuators;
-using UnityEngine;
 using System;
+using System.IO;
 using System.Security.AccessControl;
+using System.Text;
+using Unity.MLAgents;
+using Unity.MLAgents.Actuators;
+using Unity.MLAgents.Sensors;
+using UnityEngine;
 
 public class MouseAgentSimple : Agent
 
@@ -13,11 +15,21 @@ public class MouseAgentSimple : Agent
 
     
     public int lickCount = 0;
-    private bool inTheZone = false;
+    public bool inTheZone = false;
     private int lickInZone = 0;
+    public int TakenAction;
 
     public int currentEpisode = 0;
     public float cumulativeReward = 0f;
+
+    public bool StartNewFile = true;
+
+    private string filePath;
+
+    private void Awake()
+    {
+        filePath = Path.Combine(Application.persistentDataPath, "learning.csv");
+    }
 
     /// <summary>
     /// Initializes the agent.
@@ -103,6 +115,7 @@ public class MouseAgentSimple : Agent
     {
         
         var action = discreteActions[0];
+        TakenAction = action;
 
         switch (action)
         {
@@ -125,6 +138,41 @@ public class MouseAgentSimple : Agent
                     }
                 }
                 break;
+
+        }
+
+        string line = "";
+
+
+
+
+        if (StartNewFile)
+        {
+            // If the file doesn’t exist yet, write a header firs
+            File.WriteAllText(filePath, string.Empty, Encoding.UTF8);
+            var sb = new StringBuilder();
+            sb.AppendLine("Step,Episode,ActionChoice,Position,CommulativeReward,LickCount,InEndZone");
+            //sb.Append(line);
+            File.AppendAllText(filePath, sb.ToString(), Encoding.UTF8);
+            StartNewFile = false;
+
+        }
+        else
+        {
+            switch (TakenAction)
+            {
+
+                case 1: // Move Forward
+                    line = StepCount.ToString() + "," + currentEpisode + "," + "Forward" + "," + transform.localPosition.z + "," + cumulativeReward + "," + lickCount + "," + inTheZone + "\n";
+                    break;
+                case 0: // do nothing
+                    line = StepCount.ToString() + "," + currentEpisode + "," + "Stay" + ","+ transform.localPosition.z+"," + cumulativeReward + "," + lickCount + "," + inTheZone + "\n";
+                    break;
+                case 2: // lick
+                    line = StepCount.ToString() + "," + currentEpisode + "," + "Lick" + "," + transform.localPosition.z + "," + cumulativeReward + "," + lickCount + "," + inTheZone + "\n";
+                    break;
+            }
+            File.AppendAllText(filePath, line, Encoding.UTF8);
 
         }
     }

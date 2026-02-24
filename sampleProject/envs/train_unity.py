@@ -59,7 +59,7 @@ def make_gymnasium_env() -> gymn.Env:
         allow_multiple_obs=True,   # because you have 2 cameras
         flatten_branched=True,     # your branch size 2 -> Discrete(2)
     )
-    env_gym = TwoCamToDict(env_gym)  # <-- IMPORTANT: use the new wrapper
+    env_gym = TwoCamToDict(env_gym)  
     env_gymn = GymV21CompatibilityV0(env=env_gym)
 
     return env_gymn

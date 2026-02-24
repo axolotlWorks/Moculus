@@ -1,0 +1,29 @@
+{
+    "Simple": {
+        "checkpoints": [
+            {
+                "steps": 1948,
+                "file_path": "results\\MoculusTest\\Simple\\Simple-1948.onnx",
+                "reward": 80.50000081459682,
+                "creation_time": 1771513543.5998266,
+                "auxillary_file_paths": [
+                    "results\\MoculusTest\\Simple\\Simple-1948.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1948,
+            "file_path": "results\\MoculusTest\\Simple.onnx",
+            "reward": 80.50000081459682,
+            "creation_time": 1771513543.5998266,
+            "auxillary_file_paths": [
+                "results\\MoculusTest\\Simple\\Simple-1948.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

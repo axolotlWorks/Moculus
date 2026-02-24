@@ -1,0 +1,29 @@
+{
+    "Simple": {
+        "checkpoints": [
+            {
+                "steps": 313628,
+                "file_path": "results\\CSVLick\\Simple\\Simple-313628.onnx",
+                "reward": 972.0000434219837,
+                "creation_time": 1771851834.920206,
+                "auxillary_file_paths": [
+                    "results\\CSVLick\\Simple\\Simple-313628.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 313628,
+            "file_path": "results\\CSVLick\\Simple.onnx",
+            "reward": 972.0000434219837,
+            "creation_time": 1771851834.920206,
+            "auxillary_file_paths": [
+                "results\\CSVLick\\Simple\\Simple-313628.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.2.2+cu121"
+    }
+}
