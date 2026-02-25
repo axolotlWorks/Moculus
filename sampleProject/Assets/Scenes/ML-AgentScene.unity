@@ -744,7 +744,11 @@ PrefabInstance:
       propertyPath: m_SensorName
       value: CameraSensorLeft
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 816583474, guid: 019efd0e51b5ca84a93528cd31e03118, type: 3}
+    - {fileID: 2797678718792036582, guid: 019efd0e51b5ca84a93528cd31e03118, type: 3}
+    - {fileID: 7045564368610135319, guid: 019efd0e51b5ca84a93528cd31e03118, type: 3}
+    - {fileID: 816583473, guid: 019efd0e51b5ca84a93528cd31e03118, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
