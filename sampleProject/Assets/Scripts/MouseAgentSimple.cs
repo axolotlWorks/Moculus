@@ -17,6 +17,8 @@ public class MouseAgentSimple : Agent
     public int lickCount = 0;
     public bool inTheZone = false;
     private int lickInZone = 0;
+    public int lickStamina = 10;
+
     public int TakenAction;
 
     public int currentEpisode = 0;
@@ -56,6 +58,8 @@ public class MouseAgentSimple : Agent
         cumulativeReward = 0f;
         lickInZone = 0;
         lickCount = 0;
+        lickStamina = 10;
+
 
 
         ResetPosition();
@@ -113,7 +117,7 @@ public class MouseAgentSimple : Agent
     /// to move forward, 2 to perform a lick action, or 3 to move backward.</param>
     private void MoveAgent(ActionSegment<int> discreteActions)
     {
-        
+
         var action = discreteActions[0];
         TakenAction = action;
 
@@ -122,29 +126,42 @@ public class MouseAgentSimple : Agent
             //0 : Do Nothing
             case 1: // Move Forward
                 transform.localPosition += transform.forward * _moveSpeed * Time.deltaTime;
+                // Regenerate lick stamina over time, up to a maximum of 10
+                lickStamina = Math.Min(10, lickStamina + 1);
                 break;
             case 3: // move back
                 transform.localPosition -= transform.forward * _moveSpeed * Time.deltaTime;
                 break;
             case 2: // lick
-                lickCount++; 
-                if(inTheZone) 
-                { 
+                lickCount++;
+                if (lickStamina > 0)
+                {
+                    lickStamina--; // Decrease stamina by 1 for each lick
+                }else
+                {
+                    AddReward(-0.5f); // Penalize for trying to lick without stamina
+                    break;
+                }
+
+                if (inTheZone)
+                {
                     lickInZone++;
-                    if (lickInZone %3 == 0)
+                    if (lickInZone % 3 == 0)
                     {
                         AddReward(1.5f);
-
+                        EndEpisode();
                     }
                 }
                 break;
 
         }
 
+        ExportCSV();
+    }
+
+    private void ExportCSV()
+    {
         string line = "";
-
-
-
 
         if (StartNewFile)
         {
@@ -166,7 +183,7 @@ public class MouseAgentSimple : Agent
                     line = StepCount.ToString() + "," + currentEpisode + "," + "Forward" + "," + transform.localPosition.z + "," + cumulativeReward + "," + lickCount + "," + inTheZone + "\n";
                     break;
                 case 0: // do nothing
-                    line = StepCount.ToString() + "," + currentEpisode + "," + "Stay" + ","+ transform.localPosition.z+"," + cumulativeReward + "," + lickCount + "," + inTheZone + "\n";
+                    line = StepCount.ToString() + "," + currentEpisode + "," + "Stay" + "," + transform.localPosition.z + "," + cumulativeReward + "," + lickCount + "," + inTheZone + "\n";
                     break;
                 case 2: // lick
                     line = StepCount.ToString() + "," + currentEpisode + "," + "Lick" + "," + transform.localPosition.z + "," + cumulativeReward + "," + lickCount + "," + inTheZone + "\n";
@@ -176,14 +193,15 @@ public class MouseAgentSimple : Agent
 
         }
     }
-     /// <summary>
-     /// Handles the event when another collider enters the trigger collider attached to this object.
-     /// </summary>
-     /// <remarks>If the entering collider is tagged as "EndGoal", this method updates the agent's state and
-     /// rewards accordingly. This method is typically used in Unity to detect when an agent reaches a specific goal
-     /// area.
-     /// We reward the mouse for entering the goal area.</remarks>
-     /// <param name="other">The other collider that enters the trigger collider.</param>
+
+    /// <summary>
+    /// Handles the event when another collider enters the trigger collider attached to this object.
+    /// </summary>
+    /// <remarks>If the entering collider is tagged as "EndGoal", this method updates the agent's state and
+    /// rewards accordingly. This method is typically used in Unity to detect when an agent reaches a specific goal
+    /// area.
+    /// We reward the mouse for entering the goal area.</remarks>
+    /// <param name="other">The other collider that enters the trigger collider.</param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("EndGoal"))
