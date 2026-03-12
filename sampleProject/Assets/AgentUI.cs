@@ -6,6 +6,7 @@ public class AgentUI : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI episodeText;
     [SerializeField] private TMPro.TextMeshProUGUI rewardText;
     [SerializeField] private TMPro.TextMeshProUGUI lickCount;
+    [SerializeField] private TMPro.TextMeshProUGUI lickStamina;
 
     /// <summary>
     /// Updates the displayed episode, step, cumulative reward, and lick count information in the user interface.
@@ -18,5 +19,6 @@ public class AgentUI : MonoBehaviour
         episodeText.text = $"Episode: {agent.currentEpisode}" + " - Step: "+ agent.StepCount;
         rewardText.text = $"Cumulative Reward: "+agent.cumulativeReward.ToString();
         lickCount.text = $"Lick Count: "+agent.lickCount.ToString();
+        lickStamina.text = $"Lick Stamina: "+agent.lickStamina.ToString("F2");
     }
 }
