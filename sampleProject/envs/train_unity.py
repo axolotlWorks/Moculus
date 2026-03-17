@@ -1,6 +1,6 @@
 ENV_PATH = r"D:\Projects\Moculus\sampleProject\envs\MiceGramophone.exe"
 
-MODEL_NAME = "ppo_two_cam_model"
+MODEL_NAME = "ppo_Webcam_cam_model"
 MODEL_FILE = MODEL_NAME + ".zip"
 import gymnasium as gym
 from gym import spaces
@@ -56,10 +56,10 @@ def make_gymnasium_env() -> gymn.Env:
     env_gym = UnityToGymWrapper(
         unity,
         uint8_visual=True,
-        allow_multiple_obs=True,   # because you have 2 cameras
+        allow_multiple_obs=False,   # because you have 2 cameras
         flatten_branched=True,     # your branch size 2 -> Discrete(2)
     )
-    env_gym = TwoCamToDict(env_gym)  
+  #  env_gym = TwoCamToDict(env_gym)  
     env_gymn = GymV21CompatibilityV0(env=env_gym)
 
     return env_gymn
@@ -73,7 +73,7 @@ if os.path.exists(MODEL_FILE):
 else:
     print("🆕 Starting new training...")
     model = PPO(
-        "MultiInputPolicy",
+        "CnnPolicy",
         vec_env,
         verbose=1,
         tensorboard_log="./tb_logs/",
