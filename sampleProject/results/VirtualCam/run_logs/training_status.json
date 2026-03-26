@@ -1,0 +1,78 @@
+{
+    "Simple": {
+        "checkpoints": [
+            {
+                "steps": 211491,
+                "file_path": "results\\VirtualCam\\Simple\\Simple-211491.onnx",
+                "reward": 1.9522398833185435,
+                "creation_time": 1774003619.7980323,
+                "auxillary_file_paths": [
+                    "results\\VirtualCam\\Simple\\Simple-211491.pt"
+                ]
+            },
+            {
+                "steps": 499976,
+                "file_path": "results\\VirtualCam\\Simple\\Simple-499976.onnx",
+                "reward": 2.038800001144409,
+                "creation_time": 1774007740.2188766,
+                "auxillary_file_paths": [
+                    "results\\VirtualCam\\Simple\\Simple-499976.pt"
+                ]
+            },
+            {
+                "steps": 500040,
+                "file_path": "results\\VirtualCam\\Simple\\Simple-500040.onnx",
+                "reward": 2.038800001144409,
+                "creation_time": 1774007740.326433,
+                "auxillary_file_paths": [
+                    "results\\VirtualCam\\Simple\\Simple-500040.pt"
+                ]
+            },
+            {
+                "steps": 500040,
+                "file_path": "results\\VirtualCam\\Simple\\Simple-500040.onnx",
+                "reward": null,
+                "creation_time": 1774007768.369423,
+                "auxillary_file_paths": [
+                    "results\\VirtualCam\\Simple\\Simple-500040.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500040,
+            "file_path": "results\\VirtualCam\\Simple.onnx",
+            "reward": null,
+            "creation_time": 1774007768.369423,
+            "auxillary_file_paths": [
+                "results\\VirtualCam\\Simple\\Simple-500040.pt"
+            ]
+        }
+    },
+    "GridWorld": {
+        "checkpoints": [
+            {
+                "steps": 130,
+                "file_path": "results\\VirtualCam\\GridWorld\\GridWorld-130.onnx",
+                "reward": -0.4499999761581421,
+                "creation_time": 1774003620.0480156,
+                "auxillary_file_paths": [
+                    "results\\VirtualCam\\GridWorld\\GridWorld-130.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 130,
+            "file_path": "results\\VirtualCam\\GridWorld.onnx",
+            "reward": -0.4499999761581421,
+            "creation_time": 1774003620.0480156,
+            "auxillary_file_paths": [
+                "results\\VirtualCam\\GridWorld\\GridWorld-130.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

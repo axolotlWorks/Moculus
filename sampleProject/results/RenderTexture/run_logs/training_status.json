@@ -1,0 +1,29 @@
+{
+    "Simple": {
+        "checkpoints": [
+            {
+                "steps": 384486,
+                "file_path": "results\\RenderTexture\\Simple\\Simple-384486.onnx",
+                "reward": 2.1420001193881033,
+                "creation_time": 1774444184.4756978,
+                "auxillary_file_paths": [
+                    "results\\RenderTexture\\Simple\\Simple-384486.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 384486,
+            "file_path": "results\\RenderTexture\\Simple.onnx",
+            "reward": 2.1420001193881033,
+            "creation_time": 1774444184.4756978,
+            "auxillary_file_paths": [
+                "results\\RenderTexture\\Simple\\Simple-384486.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

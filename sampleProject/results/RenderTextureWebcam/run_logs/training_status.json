@@ -1,0 +1,38 @@
+{
+    "Simple": {
+        "checkpoints": [
+            {
+                "steps": 499979,
+                "file_path": "results\\RenderTextureWebcam\\Simple\\Simple-499979.onnx",
+                "reward": 2.151599995791912,
+                "creation_time": 1774531171.7799942,
+                "auxillary_file_paths": [
+                    "results\\RenderTextureWebcam\\Simple\\Simple-499979.pt"
+                ]
+            },
+            {
+                "steps": 500043,
+                "file_path": "results\\RenderTextureWebcam\\Simple\\Simple-500043.onnx",
+                "reward": 2.151599995791912,
+                "creation_time": 1774531171.982994,
+                "auxillary_file_paths": [
+                    "results\\RenderTextureWebcam\\Simple\\Simple-500043.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500043,
+            "file_path": "results\\RenderTextureWebcam\\Simple.onnx",
+            "reward": 2.151599995791912,
+            "creation_time": 1774531171.982994,
+            "auxillary_file_paths": [
+                "results\\RenderTextureWebcam\\Simple\\Simple-500043.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

@@ -5,15 +5,18 @@ using System.Text;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
+using UnityEditor.AssetImporters;
 using UnityEngine;
 
 public class MouseAgentSimple : Agent
 
 {
 
-    [SerializeField] private float _moveSpeed = 5f; //Modife from editor to optimize 
+    [SerializeField] private float _moveSpeed = 5f; //Modife from editor to optimize
 
-    
+
+
+
     public int lickCount = 0;
     public bool inTheZone = false;
     private int lickInZone = 0;
@@ -32,6 +35,7 @@ public class MouseAgentSimple : Agent
     {
         filePath = Path.Combine(Application.persistentDataPath, "learning.csv");
     }
+
 
     /// <summary>
     /// Initializes the agent.
@@ -165,7 +169,7 @@ public class MouseAgentSimple : Agent
 
         if (StartNewFile)
         {
-            // If the file doesn’t exist yet, write a header firs
+            // If the file doesnï¿½t exist yet, write a header firs
             File.WriteAllText(filePath, string.Empty, Encoding.UTF8);
             var sb = new StringBuilder();
             sb.AppendLine("Step,Episode,ActionChoice,Position,CommulativeReward,LickCount,InEndZone");
